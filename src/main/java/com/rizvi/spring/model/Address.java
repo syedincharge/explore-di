@@ -1,11 +1,6 @@
 package com.rizvi.spring.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 
 @Entity
@@ -18,8 +13,12 @@ public class Address {
 	int age;
 	String name;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	//@JoinColumn(name = "user_id")
+	//@ManyToMany
+	@JoinTable(name = "addresses",
+	joinColumns = @JoinColumn(name="user_id"),
+	inverseJoinColumns = @JoinColumn(name="address_id"))
 	private User user;
 
 	public Integer getId() {
