@@ -10,7 +10,7 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Integer id;
 	
-	int age;
+	int pin;
 	String name;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -29,12 +29,12 @@ public class Address {
 		this.id = id;
 	}
 
-	public int getAge() {
-		return age;
+	public int getPin() {
+		return pin;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setAge(int pin) {
+		this.pin = pin;
 	}
 
 	public String getName() {
