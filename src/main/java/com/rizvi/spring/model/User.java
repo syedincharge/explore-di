@@ -15,10 +15,6 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Integer id;
 	@OneToMany(cascade = CascadeType.ALL,  mappedBy ="user")
-	//@ManyToMany
-	//@JoinTable(name = "user",
-           // joinColumns = @JoinColumn(name="user_id"),
-          //  inverseJoinColumns = @JoinColumn(name="address_id"))
 	private List<Address> addresses;
 	
 	int age;

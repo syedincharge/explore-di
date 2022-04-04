@@ -14,8 +14,6 @@ public class Address {
 	String name;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	//@JoinColumn(name = "user_id")
-	//@ManyToMany
 	@JoinTable(name = "addresses",
 	joinColumns = @JoinColumn(name="user_id"),
 	inverseJoinColumns = @JoinColumn(name="address_id"))
